@@ -14,4 +14,11 @@ class Question extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    //We have slug culomn in questions table and we dont want to fill it manually so we define this mutator 
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = str_slug($value);
+    }
 }
