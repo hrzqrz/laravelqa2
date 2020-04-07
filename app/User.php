@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relationship between User and Question model
+     */
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    //We have slug culomn in questions table and we dont want to fill it manually so we define this mutator 
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = str_slug($value);
+    }
 }
