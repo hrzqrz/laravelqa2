@@ -1,6 +1,6 @@
 @if(Session('success'))
 
-    <div class="alet alert-danger">
+    <div class="alert alert-danger">
         <strong>Success </strong> {{Session('success')}}
     </div>
 
