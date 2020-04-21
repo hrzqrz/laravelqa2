@@ -14,7 +14,7 @@ class RenameAnswersInQuestionsTable extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->renameColumn('answers', 'answers_count');
+            //$table->renameColumn('answers', 'answers_count');
         });
     }
 
@@ -26,7 +26,7 @@ class RenameAnswersInQuestionsTable extends Migration
     public function down()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->renameColumn('answers_count', 'answers');
+            //$table->renameColumn('answers_count', 'answers');
         });
     }
 }
