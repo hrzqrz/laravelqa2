@@ -15,6 +15,11 @@ class Question extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
     //We have slug culomn in questions table and we dont want to fill it manually so we define this mutator 
     public function setTitleAttribute($value)
     {
